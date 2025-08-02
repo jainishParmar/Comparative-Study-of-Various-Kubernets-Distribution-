@@ -1,0 +1,1 @@
+time="2025-07-17 13:33:55" level=fatal msg="error preparing kubernetes client: stat /etc/rancher/k3s/k3s.yaml: no such file or directory" file="config.go:239"

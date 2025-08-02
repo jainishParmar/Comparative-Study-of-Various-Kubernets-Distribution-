@@ -1,0 +1,21 @@
+global:
+  measurements:
+    - name: podLatency
+  clusterHealth: true
+
+metricsEndpoints:
+  - indexer:
+      type: local
+      metricsDirectory: kube-burner-results
+jobs:
+  - name: pod-scheduling-180-test
+    jobIterations: 1
+    qps: 20
+    burst: 20
+    namespacedIterations: true
+    namespace: pod-scheduling-180-test
+    podWait: true
+    waitWhenFinished: true
+    objects:
+      - objectTemplate: pod-template.yaml
+        replicas: 180
